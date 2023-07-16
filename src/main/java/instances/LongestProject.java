@@ -7,10 +7,7 @@ public class LongestProject implements Instance {
     public String name;
     public int monthCount;
 
-    @Override
-    public void setName(long name) {
 
-    }
 
     @Override
     public void setMonthCount(int monthCount) {

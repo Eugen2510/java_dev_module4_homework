@@ -6,10 +6,6 @@ public class MaxSalaryWorker implements Instance{
     private String name;
     private int salary;
 
-    @Override
-    public void setName(long name) {
-
-    }
 
     @Override
     public void setMonthCount(int monthCount) {

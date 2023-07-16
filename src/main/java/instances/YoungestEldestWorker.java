@@ -7,10 +7,6 @@ public class YoungestEldestWorker implements Instance{
     private String name;
     private LocalDate birthday;
 
-    @Override
-    public void setName(long name) {
-
-    }
 
     @Override
     public void setMonthCount(int monthCount) {

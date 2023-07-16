@@ -7,10 +7,6 @@ public class MaxProjectCountClient implements Instance{
     private String name;
     private int projectCount;
 
-    @Override
-    public void setName(long name) {
-
-    }
 
     @Override
     public void setMonthCount(int monthCount) {

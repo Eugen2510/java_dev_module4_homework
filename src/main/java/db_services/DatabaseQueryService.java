@@ -7,7 +7,6 @@ import tools.ReadSqlFile;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,9 @@ public class DatabaseQueryService {
                 T t = tClass.newInstance();
                 for (int i = 1; i <= count; i++) {
                     String name = rmsd.getColumnName(i);
-                    if (name.equalsIgnoreCase("name") || name.equalsIgnoreCase("id")) {
+                    if (name.equalsIgnoreCase("name")
+                            || name.equalsIgnoreCase("id")
+                            || name.equalsIgnoreCase("project_id")) {
                         t.setName(resultSet.getString(name));
                     }
                     if (name.equalsIgnoreCase("MONTH_COUNT")) {
@@ -58,8 +59,8 @@ public class DatabaseQueryService {
     }
 
     public static void main(String[] args) {
-        String sql = ReadSqlFile.stringFromFile(SqlFilePathsConstants.FIND_YOUNGEST_ELDEST_WORKERS);
-        List<YoungestEldestWorker> execute = new DatabaseQueryService().execute(sql, YoungestEldestWorker.class);
+        String sql = ReadSqlFile.stringFromFile(SqlFilePathsConstants.FIND_LONGEST_PROJECT);
+        List<LongestProject> execute = new DatabaseQueryService().execute(sql, LongestProject.class);
         System.out.println("execute = " + execute);
 
     }

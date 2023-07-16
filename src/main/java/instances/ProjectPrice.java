@@ -6,10 +6,6 @@ public class ProjectPrice implements Instance{
     private String name;
     private int price;
 
-    @Override
-    public void setName(long name) {
-
-    }
 
     @Override
     public void setMonthCount(int monthCount) {
