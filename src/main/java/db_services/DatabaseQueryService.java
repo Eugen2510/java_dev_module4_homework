@@ -59,9 +59,27 @@ public class DatabaseQueryService {
     }
 
     public static void main(String[] args) {
-        String sql = ReadSqlFile.stringFromFile(SqlFilePathsConstants.FIND_LONGEST_PROJECT);
-        List<LongestProject> execute = new DatabaseQueryService().execute(sql, LongestProject.class);
-        System.out.println("execute = " + execute);
+        DatabaseQueryService queryService = new DatabaseQueryService();
 
+        String sql = ReadSqlFile.stringFromFile(SqlFilePathsConstants.PRINT_PROJECT_PRICES);
+        List<ProjectPrice> projectPrices =queryService.execute(sql, ProjectPrice.class);
+        System.out.println("List<ProjectPrice> = " + projectPrices);
+
+
+        sql = ReadSqlFile.stringFromFile(SqlFilePathsConstants.FIND_YOUNGEST_ELDEST_WORKERS);
+        List<YoungestEldestWorker> youngestEldestWorkers = queryService.execute(sql, YoungestEldestWorker.class);
+        System.out.println("List<YoungestEldestWorker> = " + youngestEldestWorkers);
+
+        sql = ReadSqlFile.stringFromFile(SqlFilePathsConstants.FIND_LONGEST_PROJECT);
+        List<LongestProject> longestProjects = queryService.execute(sql, LongestProject.class);
+        System.out.println("List<LongestProject> = " + longestProjects);
+
+        sql = ReadSqlFile.stringFromFile(SqlFilePathsConstants.FIND_MAX_SALARY_WORKER);
+        List<MaxSalaryWorker> maxSalaryWorkers = queryService.execute(sql, MaxSalaryWorker.class);
+        System.out.println("List<MaxSalaryWorker> = " + maxSalaryWorkers);
+
+        sql = ReadSqlFile.stringFromFile(SqlFilePathsConstants.FIND_MAX_PROJECTS_CLIENT);
+        List<MaxProjectCountClient> maxProjectCountClients = queryService.execute(sql, MaxProjectCountClient.class);
+        System.out.println("List<MaxProjectCountClient> = " + maxProjectCountClients);
     }
 }

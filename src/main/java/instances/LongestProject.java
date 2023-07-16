@@ -1,7 +1,6 @@
 package instances;
 
 import java.time.LocalDate;
-import java.util.Locale;
 
 public class LongestProject implements Instance {
     public String name;

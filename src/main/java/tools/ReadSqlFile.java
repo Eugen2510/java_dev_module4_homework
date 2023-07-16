@@ -1,6 +1,5 @@
 package tools;
 
-import storage.SqlFilePathsConstants;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,7 +17,4 @@ public class ReadSqlFile {
         return sql;
     }
 
-    public static void main(String[] args) {
-        System.out.println(ReadSqlFile.stringFromFile(SqlFilePathsConstants.INIT));
-    }
 }
